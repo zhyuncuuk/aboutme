@@ -4,23 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Yuyun Ika Dewi — Luxury Photography</title>
-  <meta name="description" content="Fotografer profesional: wedding, portrait, dan commercial/product. Hasil konsisten, warna akurat, pengalaman klien yang nyaman." />
+  <meta name="description" content="Fotografer profesional: wedding, portrait, commercial/product. Hasil konsisten, warna akurat, pengalaman klien yang nyaman." />
   <meta name="theme-color" content="#0b0b0d" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <!-- Typography: Cormorant Garamond (headings) + Lato (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet"/>
 
   <style>
     :root{
       --bg:#fbfaf8; --ink:#101113; --muted:#6b7077;
       --gold:#c7a44a; --gold-2:#a28632; --line:#e9e6e1;
-      --panel:#ffffff; --radius:20px;
-      --shadow:0 14px 34px rgba(0,0,0,.08);
+      --panel:#ffffff; --radius:20px; --shadow:0 14px 34px rgba(0,0,0,.08);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{margin:0;background:
       radial-gradient(1100px 600px at 120% -10%, rgba(199,164,74,.07), transparent 60%),
       var(--bg);
-      color:var(--ink); font:16px/1.7 Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif}
+      color:var(--ink); font:16px/1.7 'Lato', system-ui, Segoe UI, Roboto, Arial, sans-serif}
+    h1,h2,h3,h4,h5,h6{font-family:'Cormorant Garamond', serif; font-weight:600; letter-spacing:.2px}
     img{max-width:100%;display:block}
 
     /* NAVBAR */
@@ -29,7 +30,7 @@
     .nav .inner{max-width:1280px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:12px}
     .brand img{width:44px;height:44px;border-radius:50%;border:2px solid var(--gold);object-fit:cover}
-    .brand h1{margin:0;font-family:"Playfair Display",serif;font-size:22px;letter-spacing:.2px}
+    .brand h1{margin:0;font-size:22px}
     .links a{color:inherit;text-decoration:none;margin-left:22px;font-weight:600;position:relative}
     .links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:center;transition:transform .25s}
     .links a:hover::after{transform:scaleX(1)}
@@ -40,7 +41,7 @@
     .hero{min-height:86vh;display:grid;place-items:center;padding:96px 22px}
     .hero .wrap{max-width:1280px;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
     .eyebrow{display:inline-block;color:var(--gold);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:12px;margin-bottom:12px}
-    .headline{font-family:"Playfair Display",serif;font-size:62px;line-height:1.06;margin:0 0 12px}
+    .headline{font-size:62px;line-height:1.06;margin:0 0 12px}
     .sub{color:var(--muted);max-width:720px}
     .actions{display:flex;gap:12px;margin-top:22px}
     .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;border:1px solid var(--line);background:#fff;color:inherit;text-decoration:none;font-weight:700;transition:.25s}
@@ -50,11 +51,10 @@
     .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
     .badge{border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:12px;background:#fff}
 
-    /* GENERIC SECTIONS */
+    /* SECTIONS */
     section{padding:96px 22px}
     .container{max-width:1280px;margin:auto}
     .section-title{text-align:center;margin-bottom:34px}
-    .section-title h2{font-family:"Playfair Display",serif;font-size:40px;margin:0}
     .section-title p{color:var(--muted)}
 
     /* CLIENT STRIP */
@@ -65,7 +65,7 @@
     .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
     .service{padding:24px;border-radius:18px;background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow);transition:.25s}
     .service:hover{transform:translateY(-4px)}
-    .service h4{margin:0 0 8px;font-size:20px}
+    .service h4{margin:0 0 8px;font-size:22px}
     .service p{margin:0 0 10px;color:var(--muted)}
     .price{color:var(--gold);font-weight:800}
 
@@ -73,12 +73,9 @@
     .cases{position:relative}
     .carousel{overflow:hidden;border:1px solid var(--line);border-radius:20px;background:var(--panel);box-shadow:var(--shadow)}
     .track{display:flex;transition:transform .5s ease}
-    .slide{min-width:100%;display:grid;grid-template-columns:1.1fr .9fr;gap:0}
-    .slide .media{position:relative}
+    .slide{min-width:100%;display:grid;grid-template-columns:1.1fr .9fr}
     .slide .media img{height:100%;width:100%;object-fit:cover}
     .cap{padding:26px}
-    .cap h3{margin:0 0 6px}
-    .cap p{color:var(--muted)}
     .cap .meta{margin-top:12px;color:#7a7f86}
     .ctrl{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
     .ctrl button{pointer-events:auto;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:0 10px;box-shadow:var(--shadow)}
@@ -164,7 +161,7 @@
       <div>
         <span class="eyebrow">Luxury • Editorial • True-to-Color</span>
         <h2 class="headline">Fotografer untuk brand & momen berkelas — hasil konsisten, pengalaman klien yang nyaman</h2>
-        <p class="sub">Wedding, portrait, dan commercial/product photography dengan flow kerja rapi dari pra-produksi hingga delivery. Fokus pada warna akurat, komposisi elegan, dan cerita yang terasa.</p>
+        <p class="sub">Wedding, portrait, dan commercial/product photography dengan flow kerja rapi dari pra-produksi hingga delivery. Fokus pada warna akurat, komposisi elegan, dan storytelling yang kuat.</p>
         <div class="actions">
           <a class="btn primary" href="#portfolio">Lihat Portfolio</a>
           <a class="btn" href="assets/Yuyun-Ika-Dewi-CV.pdf" download>Unduh CV</a>
@@ -235,7 +232,6 @@
       </div>
       <div class="carousel">
         <div class="track" id="track">
-          <!-- slide 1 -->
           <article class="slide">
             <div class="media">
               <img src="assets/cases/case1.jpg" alt="Kampanye kopi — visual hero" onerror="this.src='https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1600'">
@@ -246,7 +242,6 @@
               <div class="meta">Peran: Creative Direction, Shooting, Retouch • Outcome: CTR +38%</div>
             </div>
           </article>
-          <!-- slide 2 -->
           <article class="slide">
             <div class="media">
               <img src="assets/cases/case2.jpg" alt="Lookbook brand fesyen" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600'">
@@ -254,10 +249,9 @@
             <div class="cap">
               <h3>Atelier — Lookbook Mini</h3>
               <p>Look editorial dengan warna true-to-color untuk katalog & Instagram carousel. Routing lokasi efisien.</p>
-              <div class="meta">Peran: Shoot, Grade, Layout • Outcome: Save time 25% produksi</div>
+              <div class="meta">Peran: Shoot, Grade, Layout • Outcome: Time saving 25%</div>
             </div>
           </article>
-          <!-- slide 3 -->
           <article class="slide">
             <div class="media">
               <img src="assets/cases/case3.jpg" alt="Dokumentasi wedding editorial" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1600'">
@@ -269,11 +263,7 @@
             </div>
           </article>
         </div>
-
-        <div class="ctrl" aria-hidden="false">
-          <button id="prev" aria-label="Sebelumnya">◀</button>
-          <button id="next" aria-label="Berikutnya">▶</button>
-        </div>
+        <div class="ctrl"><button id="prev" aria-label="Sebelumnya">◀</button><button id="next" aria-label="Berikutnya">▶</button></div>
       </div>
       <div class="dots" id="dots" role="tablist" aria-label="Navigasi slide"></div>
     </div>
@@ -292,9 +282,7 @@
         <button class="chip" data-filter="portrait">Portrait</button>
         <button class="chip" data-filter="product">Product</button>
       </div>
-
       <div class="masonry" id="grid">
-        <!-- ganti src dengan filemu -->
         <figure class="shot" data-cat="wedding"><img src="assets/shots/shot1.jpg" alt="Wedding 1"></figure>
         <figure class="shot" data-cat="portrait"><img src="assets/shots/shot2.jpg" alt="Portrait 1"></figure>
         <figure class="shot" data-cat="product"><img src="assets/shots/shot3.jpg" alt="Product 1"></figure>
@@ -303,11 +291,7 @@
         <figure class="shot" data-cat="product"><img src="assets/shots/shot6.jpg" alt="Product 2"></figure>
       </div>
     </div>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
-      <img alt="preview">
-    </div>
+    <div class="lightbox" id="lightbox" aria-modal="true" role="dialog"><img alt="preview"></div>
   </section>
 
   <!-- PRICING & FAQ -->
@@ -317,50 +301,15 @@
         <h2 id="pricing-title">Pricing & FAQ</h2>
         <p>Harga indikatif—dapat disesuaikan dengan kebutuhan</p>
       </div>
-
       <div class="pricing">
-        <div class="tier">
-          <h4>Portrait Basic</h4>
-          <div class="price">IDR 1,2 jt</div>
-          <ul>
-            <li>60–90 menit sesi</li>
-            <li>10–15 foto retouch</li>
-            <li>Gallery online</li>
-          </ul>
-        </div>
-        <div class="tier">
-          <h4>Wedding Day</h4>
-          <div class="price">IDR 6,5 jt</div>
-          <ul>
-            <li>Dokumentasi full day</li>
-            <li>200+ foto terseleksi</li>
-            <li>Album premium (opsional)</li>
-          </ul>
-        </div>
-        <div class="tier">
-          <h4>Commercial/Product</h4>
-          <div class="price">IDR 1,8 jt</div>
-          <ul>
-            <li>Per sesi / set up</li>
-            <li>Styling & color grading</li>
-            <li>Hak pakai brand</li>
-          </ul>
-        </div>
+        <div class="tier"><h4>Portrait Basic</h4><div class="price">IDR 1,2 jt</div><ul><li>60–90 menit sesi</li><li>10–15 foto retouch</li><li>Gallery online</li></ul></div>
+        <div class="tier"><h4>Wedding Day</h4><div class="price">IDR 6,5 jt</div><ul><li>Dokumentasi full day</li><li>200+ foto terseleksi</li><li>Album premium (opsional)</li></ul></div>
+        <div class="tier"><h4>Commercial/Product</h4><div class="price">IDR 1,8 jt</div><ul><li>Per sesi / setup</li><li>Styling & color grading</li><li>Hak pakai brand</li></ul></div>
       </div>
-
       <div class="faq" aria-label="Pertanyaan Umum">
-        <details>
-          <summary>Bagaimana proses booking?</summary>
-          <p>Isi form di bawah atau kirim WhatsApp. Tanggal akan di-hold setelah DP diterima.</p>
-        </details>
-        <details>
-          <summary>Kapan foto selesai?</summary>
-          <p>Portrait 3–5 hari kerja, wedding 2–3 minggu, commercial tergantung kompleksitas.</p>
-        </details>
-        <details>
-          <summary>Apakah bisa perjalanan luar kota?</summary>
-          <p>Bisa. Tersedia Jabodetabek, Jateng, Jabar. Biaya transport/akomodasi disesuaikan.</p>
-        </details>
+        <details><summary>Bagaimana proses booking?</summary><p>Isi form di bawah atau kirim WhatsApp. Tanggal di-hold setelah DP.</p></details>
+        <details><summary>Kapan foto selesai?</summary><p>Portrait 3–5 hari kerja, wedding 2–3 minggu, commercial tergantung kompleksitas.</p></details>
+        <details><summary>Apakah bisa perjalanan luar kota?</summary><p>Bisa. Tersedia Jabodetabek, Jateng, Jabar. Biaya transport/akomodasi menyesuaikan.</p></details>
       </div>
     </div>
   </section>
@@ -372,23 +321,11 @@
         <h2 id="testi-title">Testimoni Klien</h2>
         <p>Umpan balik dari mereka yang sudah bekerja sama</p>
       </div>
-      <div class="rating-wrap">
-        <div class="stars" aria-label="rating">★★★★★</div>
-        <div class="score">4.9/5 dari 180+ ulasan</div>
-      </div>
+      <div class="rating-wrap"><div class="stars" aria-label="rating">★★★★★</div><div class="score">4.9/5 dari 180+ ulasan</div></div>
       <div class="testi-grid">
-        <div class="quote">
-          <p>“Hasilnya konsisten berkelas majalah. Arahan pose jelas, detail warna rapi.”</p>
-          <div class="by">— R & A (Wedding)</div>
-        </div>
-        <div class="quote">
-          <p>“Brief bisnis kami diterjemahkan jadi visual bersih & siap pakai untuk marketplace.”</p>
-          <div class="by">— ADZSTORE (Commercial)</div>
-        </div>
-        <div class="quote">
-          <p>“On-time, file rapi, komunikasi cepat. Prosesnya nyaman dari awal sampai akhir.”</p>
-          <div class="by">— Nabila (Portrait)</div>
-        </div>
+        <div class="quote"><p>“Hasilnya konsisten berkelas majalah. Arahan pose jelas, detail warna rapi.”</p><div class="by">— R & A (Wedding)</div></div>
+        <div class="quote"><p>“Brief bisnis kami diterjemahkan jadi visual bersih & siap pakai.”</p><div class="by">— ADZSTORE (Commercial)</div></div>
+        <div class="quote"><p>“On-time, file rapi, komunikasi cepat. Prosesnya nyaman.”</p><div class="by">— Nabila (Portrait)</div></div>
       </div>
     </div>
   </section>
@@ -401,15 +338,12 @@
         <p>Balasan maksimal 24 jam pada hari kerja</p>
       </div>
       <div class="contact-grid">
-        <!-- FORM: pilih Salah Satu—Formspree (mudah) atau EmailJS -->
         <form class="card" id="formspree" action="https://formspree.io/f/your_form_id" method="POST" style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)">
           <div class="field"><label>Nama</label><input class="input" name="name" required /></div>
           <div class="field"><label>Email</label><input class="input" type="email" name="email" required /></div>
           <div class="field"><label>Jenis Layanan</label>
             <select class="input" name="service" required>
-              <option value="Wedding">Wedding</option>
-              <option value="Portrait">Portrait</option>
-              <option value="Product">Product/Commercial</option>
+              <option value="Wedding">Wedding</option><option value="Portrait">Portrait</option><option value="Product">Product/Commercial</option>
             </select>
           </div>
           <div class="field"><label>Pesan</label><textarea class="input" name="message" rows="5" required></textarea></div>
@@ -417,7 +351,6 @@
           <p id="status" style="color:var(--muted);margin-top:8px"></p>
           <p style="margin-top:8px;font-size:12px;color:#8a8f95">Alternatif: <a href="mailto:yuyunikadewi@gmail.com">yuyunikadewi@gmail.com</a> • WA <a href="https://wa.me/6285876481987" target="_blank" rel="noopener">+62 858-7648-1987</a></p>
         </form>
-
         <aside class="card" style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)">
           <h3 style="margin-top:0">Lokasi & Ketersediaan</h3>
           <p>Berbasis di Brebes • Tersedia perjalanan (Jabodetabek, Jateng, Jabar)</p>
@@ -428,85 +361,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER + REVIEW STRIP -->
   <footer>
     <div class="foot">
-      <div>© <span id="year"></span> Yuyun Ika Dewi — All Rights Reserved.</div>
-      <a href="#home" class="btn" style="border-radius:999px">Kembali ke atas ↑</a>
-    </div>
-  </footer>
-  <!-- POSITIVE REVIEW STRIP (very bottom) -->
-  <div class="review-strip" aria-label="Ringkasan ulasan">
-    <div class="review-inner">
-      <div><strong>Klien menyukai hasil yang konsisten & proses yang nyaman.</strong></div>
-      <div class="score">Skor 4.9/5 • 180+ ulasan positif</div>
-    </div>
-  </div>
-
-  <script>
-    // Tahun
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // CASE STUDY CAROUSEL
-    const track = document.getElementById('track');
-    const slides = [...track.children];
-    let index = 0;
-
-    function renderDots(){
-      const dots = document.getElementById('dots');
-      dots.innerHTML = '';
-      slides.forEach((_,i)=>{
-        const d=document.createElement('div'); d.className='dot'+(i===index?' active':'');
-        d.setAttribute('role','tab'); d.setAttribute('aria-label','Slide '+(i+1));
-        d.addEventListener('click',()=>go(i));
-        dots.appendChild(d);
-      });
-    }
-    function go(i){
-      index = (i+slides.length)%slides.length;
-      track.style.transform = `translateX(-${index*100}%)`;
-      renderDots();
-    }
-    document.getElementById('prev').onclick=()=>go(index-1);
-    document.getElementById('next').onclick=()=>go(index+1);
-    renderDots();
-
-    // PORTFOLIO LIGHTBOX + FILTER
-    const lb = document.getElementById('lightbox');
-    const lbImg = lb.querySelector('img');
-    document.getElementById('grid').addEventListener('click', e=>{
-      const img=e.target.closest('img'); if(!img) return;
-      lbImg.src=img.src; lb.classList.add('open');
-    });
-    lb.addEventListener('click', ()=>lb.classList.remove('open'));
-
-    const chips=[...document.querySelectorAll('.chip')];
-    const shots=[...document.querySelectorAll('.shot')];
-    chips.forEach(c=>c.addEventListener('click',()=>{
-      chips.forEach(x=>x.classList.remove('active')); c.classList.add('active');
-      const cat=c.dataset.filter;
-      shots.forEach(s=>s.style.display=(cat==='all'||s.dataset.cat===cat)?'block':'none');
-    }));
-
-    // Formspree feedback (optional UX)
-    const form = document.getElementById('formspree');
-    form?.addEventListener('submit', ()=> {
-      document.getElementById('status').textContent = 'Mengirim...';
-      setTimeout(()=>{ document.getElementById('status').textContent = 'Terkirim. Terima kasih!'; }, 1200);
-    });
-
-    // JSON-LD (SEO)
-    const org = {
-      "@context":"https://schema.org",
-      "@type":"ProfessionalService",
-      "name":"Yuyun Ika Dewi Photography",
-      "areaServed":["Brebes","Jawa Tengah","Jabodetabek","Jawa Barat"],
-      "image":"assets/hero.jpg",
-      "telephone":"+6285876481987",
-      "email":"yuyunikadewi@gmail.com",
-      "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"180"}
-    };
-    const s=document.createElement('script'); s.type='application/ld+json'; s.textContent=JSON.stringify(org); document.body.appendChild(s);
-  </script>
-</body>
-</html>
+      <div>© <span id="year"></span> Yuyun Ika Dewi — All Ri
